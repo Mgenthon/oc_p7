@@ -28,15 +28,15 @@ Exemple d'ID : 100001 100005 100013 100028 100038 100042 100057 100065 100066 10
 
 Déploiement sur Heroku :
 
-Créer un compte sur Heroku
-Installer HEROKU CLI
-Créer une nouvelle appli dans Heroku
+- Créer un compte sur Heroku
+- Installer HEROKU CLI
+- Créer une nouvelle appli dans Heroku
 
 se placer dans le dossier
-git init 
-git add app.py Procfile requirements.txt ...
-git commit -m "first commit"
-heroku login -i
-heroku git:remote -a {your-project-name} #lier votre dossier local à appli Heroku
-git push heroku master # push your code to heroku
+- git init 
+- git add app.py Procfile requirements.txt ...
+- git commit -m "first commit"
+- heroku login -i
+- heroku git:remote -a {your-project-name} #lier votre dossier local à appli Heroku
+- git push heroku master # push your code to heroku
 
