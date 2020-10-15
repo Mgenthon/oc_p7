@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Model API Demo - docs</title>
+  </head>
+  <body>
+    <h3>Model API Documentation</h3>
+    <p>The model API receives a JSON request containing model features:</p>
+    <ul>
+      <li>FEATURES - model has to be fed with a value for 224 features</li>
+    </ul>
+    <p>The model API returns a JSON response containing:</p>
+    <ul>
+      <li>ESTIMATE - estimate if customer will pay back credit ( 0 : yes, 1 : no)</li>
+      <li>MISSING_DATA - whether or not the received request was missing any feature data</li>
+    </ul>
+  </body>
+</html>
