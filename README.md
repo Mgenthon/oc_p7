@@ -14,10 +14,9 @@ L'API renvoie la probabilité de défaut de remboursement entre 0 et 1 (0 = cré
 
 Le code pour appeler l'API est le suivant. Il faut fournir à l'API un dictionnaire ayant pour clé les features du fichier features.py (dossier dashboard) et 
 les valeurs associés.
+
 url='https://apiflaskoc.herokuapp.com/predict_api'
-
 response = requests.post(url, json=test_param_d)
-
 response.json()
 
 Dans le dossier dashboard, on trouve le code du dashboard qui s'appuie notament sur des outputs qui ne sont pas sur Github (problème de mémoire), mais qui sont générés par notre notebook P7_02_Modele.
@@ -30,22 +29,14 @@ Exemple d'ID : 100001 100005 100013 100028 100038 100042 100057 100065 100066 10
 Déploiement sur Heroku :
 
 Créer un compte sur Heroku
-
 Installer HEROKU CLI
-
 Créer une nouvelle appli dans Heroku
 
 se placer dans le dossier
-
 git init 
-
 git add app.py Procfile requirements.txt ...
-
 git commit -m "first commit"
-
 heroku login -i
-
 heroku git:remote -a {your-project-name} #lier votre dossier local à appli Heroku
-
 git push heroku master # push your code to heroku
 
