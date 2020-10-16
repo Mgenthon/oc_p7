@@ -12,12 +12,12 @@ Dans le dossier api, on retrouve le code pour déployer le modèle de machine le
 Les fichiers Procfile et requirements sont utilisés par Heroku et sont indispensables pour le déploiement. Le fichier *.pkl est le modèle entraîné.
 L'API renvoie la probabilité de défaut de remboursement entre 0 et 1 (0 = crédit remboursé, 1 = défaut crédit)
 
-Le code pour appeler l'API est le suivant. Il faut fournir à l'API un dictionnaire ayant pour clé les features du fichier features.py (dossier dashboard) et 
+Il faut fournir à l'API un dictionnaire ayant pour clé les features du fichier features.py (dossier dashboard) et 
 les valeurs associés.
-
-url='https://apiflaskoc.herokuapp.com/predict_api'
-response = requests.post(url, json=test_param_d)
-response.json()
+Le code pour appeler l'API est le suivant.
+- url='https://apiflaskoc.herokuapp.com/predict_api'
+- response = requests.post(url, json=test_param_d)
+- response.json()
 
 Dans le dossier dashboard, on trouve le code du dashboard qui s'appuie notament sur des outputs qui ne sont pas sur Github (problème de mémoire), mais qui sont générés par notre notebook P7_02_Modele.
 
