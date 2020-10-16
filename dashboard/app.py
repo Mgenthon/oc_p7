@@ -10,7 +10,7 @@ from pandas.core.common import flatten
 import json
 import requests
 
-#url = 'http://127.0.0.1:5000/predict_api'
+#url = 'http://127.0.0.1:5000/predict_api' # URL en local
 url = 'https://apiflaskoc.herokuapp.com/predict_api'
 Path = './output/'
 df = pd.read_csv(Path+'df_csv_export.csv', sep=',')
@@ -55,17 +55,17 @@ app.layout = html.Div([
     		html.Div([
     			html.Div([
     				dcc.Dropdown(
-              id='xaxis-column',
-              options=[{'label': i, 'value': i} for i in available_indicators],
-              value='Revenu'
-            )
+              		id='xaxis-column',
+              		options=[{'label': i, 'value': i} for i in available_indicators],
+              		value='Revenu'
+            		)
     			], style={'width': '48%', 'display': 'inline-block'}),
     			html.Div([
     				dcc.Dropdown(
-              id='yaxis-column',
-              options=[{'label': i, 'value': i} for i in available_indicators],
-              value='Age'
-            )
+              		id='yaxis-column',
+              		options=[{'label': i, 'value': i} for i in available_indicators],
+              		value='Age'
+            		)
     			], style={'width': '48%', 'float': 'right', 'display': 'inline-block'}),
     		]),
     	], style={'width': '48%', 'display': 'inline-block'}),
@@ -74,19 +74,19 @@ app.layout = html.Div([
      		# Graphique comparatif job
     		dcc.Graph(id='graph_job'),
     		dcc.Dropdown(
-          id='feature_id',
-          options=[{'label': i, 'value': i} for i in available_indicators],
-          value='Revenu'
-        )
+          	id='feature_id',
+          	options=[{'label': i, 'value': i} for i in available_indicators],
+          	value='Revenu'
+        	)
     	], style={'width': '48%', 'display': 'inline-block'}),
     ])
 ])
 
 @app.callback(
 	Output('graph_job','figure'),
-    [Input('submit-button-state', 'n_clicks')],
-    [State('my-input-ID', 'value'),
-     State('feature_id', 'value')]
+	[Input('submit-button-state', 'n_clicks')],
+	[State('my-input-ID', 'value'),
+    State('feature_id', 'value')]
 )
 
 def update_fig2(n_clicks, selected_applicant, feature_id):
@@ -115,11 +115,11 @@ def update_fig2(n_clicks, selected_applicant, feature_id):
 @app.callback(
 	Output(component_id='filtered_table', component_property='children'),
 	Output('graph_knn','figure'),
-  Output('API_result','children'),
-  [Input('submit-button-state', 'n_clicks')],
-  [State('my-input-ID', 'value'),
-  State('xaxis-column', 'value'),
-  State('yaxis-column', 'value')]
+  	Output('API_result','children'),
+  	[Input('submit-button-state', 'n_clicks')],
+  	[State('my-input-ID', 'value'),
+  	State('xaxis-column', 'value'),
+  	State('yaxis-column', 'value')]
 )
 
 def update_df_fig(n_clicks, selected_applicant, xaxis_column_name, yaxis_column_name):
