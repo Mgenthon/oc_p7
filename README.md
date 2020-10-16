@@ -34,9 +34,9 @@ Déploiement sur Heroku :
 
 se placer dans le dossier
 - git init 
-- git add app.py Procfile requirements.txt ...
+- git add app.py Procfile requirements.txt  #tous les fichiers de l'appli
 - git commit -m "first commit"
 - heroku login -i
-- heroku git:remote -a {your-project-name} #lier votre dossier local à appli Heroku
+- heroku git:remote -a {your-Heroku-project-name} #lier votre dossier local à appli Heroku
 - git push heroku master # push your code to heroku
 
